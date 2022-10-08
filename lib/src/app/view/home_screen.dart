@@ -6,8 +6,7 @@ import 'package:player_app/src/app/model/song.dart';
 import 'package:player_app/src/app/view_models/custom_app_bar.dart';
 import 'package:player_app/src/app/view_models/nav_bar.dart';
 import 'package:player_app/src/app/view_models/discover_music.dart';
-import 'package:player_app/src/app/view_models/playlist_card.dart';
-import 'package:player_app/src/app/view_models/section_header.dart';
+import 'package:player_app/src/app/view_models/playlist_music.dart';
 import 'package:player_app/src/app/view_models/trending_music.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -30,7 +29,10 @@ class HomeScreen extends StatelessWidget {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        drawer: const Drawer(),
+        drawer: Drawer(
+          backgroundColor: const Color(0xffc86b6f).withOpacity(0.8),
+          width: MediaQuery.of(context).size.width * 0.6,
+        ),
         appBar: const CustomAppBar(),
         bottomNavigationBar: const NavBar(),
         body: SingleChildScrollView(
@@ -38,22 +40,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               const DiscoverMusic(),
               TrendingMusic(songs: songs),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    const SectionHeader(title: 'Playlists'),
-                    ListView.builder(
-                        shrinkWrap: true,
-                        padding: const EdgeInsets.only(top: 20),
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: playlists.length,
-                        itemBuilder: (context, index) {
-                          return PlayListCard(playlist: playlists[index]);
-                        })
-                  ],
-                ),
-              )
+              PlayListMusic(playlists: playlists)
             ],
           ),
         ),

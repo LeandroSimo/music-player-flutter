@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:player_app/src/app/view_models/musicplyer.dart';
+import 'package:player_app/src/app/view_models/musicplayer.dart';
 import 'package:rxdart/rxdart.dart' as rxdart;
 
 // Song Model
@@ -19,7 +20,7 @@ class SongScreen extends StatefulWidget {
 
 class _SongScreenState extends State<SongScreen> {
   AudioPlayer audioPlayer = AudioPlayer();
-  Song song = Song.songs[0];
+  Song song = Get.arguments ?? Song.songs.length;
 
   @override
   void initState() {
@@ -29,6 +30,15 @@ class _SongScreenState extends State<SongScreen> {
         children: [
           AudioSource.uri(
             Uri.parse('asset:///${song.url}'),
+          ),
+          AudioSource.uri(
+            Uri.parse('asset:///${Song.songs[1].url}'),
+          ),
+          AudioSource.uri(
+            Uri.parse('asset:///${Song.songs[2].url}'),
+          ),
+          AudioSource.uri(
+            Uri.parse('asset:///${Song.songs[3].url}'),
           ),
         ],
       ),
@@ -67,6 +77,7 @@ class _SongScreenState extends State<SongScreen> {
           ),
           const BackgroundFilter(),
           MusicPlayer(
+            song: song,
             seekBarDataStream: _seekBarDataStream,
             audioPlayer: audioPlayer,
           ),
