@@ -32,25 +32,43 @@ class MusicPlayer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: Text(
-              song.title,
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
-          ),
+          StreamBuilder<int?>(
+              stream: audioPlayer.currentIndexStream,
+              builder: (context, snapshot) {
+                final currentIndex = snapshot.data;
+                if (currentIndex != null) {
+                  return Center(
+                    child: Text(
+                      Song.songs[currentIndex].title,
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                    ),
+                  );
+                  ;
+                }
+                return const Text('');
+              }),
           const SizedBox(height: 10),
-          Center(
-            child: Text(
-              song.description,
-              maxLines: 2,
-              style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: Colors.white,
-                  ),
-            ),
-          ),
+          StreamBuilder<int?>(
+              stream: audioPlayer.currentIndexStream,
+              builder: (context, snapshot) {
+                final currentIndex = snapshot.data;
+                if (currentIndex != null) {
+                  return Center(
+                    child: Text(
+                      Song.songs[currentIndex].description,
+                      maxLines: 2,
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: Colors.white,
+                          ),
+                    ),
+                  );
+                }
+                return const Text('');
+              }),
           const SizedBox(height: 30),
           StreamBuilder<SeekBarData>(
             stream: _seekBarDataStream,

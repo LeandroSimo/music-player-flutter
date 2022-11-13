@@ -71,10 +71,18 @@ class _SongScreenState extends State<SongScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            song.coverUrl,
-            fit: BoxFit.cover,
-          ),
+          StreamBuilder<int?>(
+              stream: audioPlayer.currentIndexStream,
+              builder: (context, snapshot) {
+                final currentIndex = snapshot.data;
+                if (currentIndex != null) {
+                  return Image.asset(
+                    Song.songs[currentIndex].coverUrl,
+                    fit: BoxFit.cover,
+                  );
+                }
+                return const Text('');
+              }),
           const BackgroundFilter(),
           MusicPlayer(
             song: song,

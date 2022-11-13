@@ -14,8 +14,8 @@ class PlayerButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        StreamBuilder<SequenceState?>(
-          stream: audioPlayer.sequenceStateStream,
+        StreamBuilder<int?>(
+          stream: audioPlayer.currentIndexStream,
           builder: (context, index) {
             return IconButton(
               onPressed:
@@ -79,8 +79,8 @@ class PlayerButtons extends StatelessWidget {
             }
           },
         ),
-        StreamBuilder<SequenceState?>(
-          stream: audioPlayer.sequenceStateStream,
+        StreamBuilder<int?>(
+          stream: audioPlayer.currentIndexStream,
           builder: (context, index) {
             return IconButton(
               onPressed: audioPlayer.hasNext ? audioPlayer.seekToNext : null,
