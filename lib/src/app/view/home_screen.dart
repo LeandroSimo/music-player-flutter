@@ -3,11 +3,11 @@ import 'package:player_app/src/app/model/playlist.dart';
 import 'package:player_app/src/app/model/song.dart';
 
 // Widgets
-import 'package:player_app/src/app/view_models/custom_app_bar.dart';
-import 'package:player_app/src/app/view_models/nav_bar.dart';
-import 'package:player_app/src/app/view_models/discover_music.dart';
-import 'package:player_app/src/app/view_models/playlist_music.dart';
-import 'package:player_app/src/app/view_models/trending_music.dart';
+import 'package:player_app/src/app/widgets/custom_app_bar.dart';
+import 'package:player_app/src/app/widgets/nav_bar.dart';
+import 'package:player_app/src/app/widgets/discover_music.dart';
+import 'package:player_app/src/app/widgets/playlist_music.dart';
+import 'package:player_app/src/app/widgets/trending_music.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

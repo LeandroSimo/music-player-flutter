@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:player_app/src/app/model/playlist.dart';
 
 // Widget
-import 'package:player_app/src/app/view_models/play_or_shuffle_switch.dart';
-import 'package:player_app/src/app/view_models/playlist_songs.dart';
-import 'package:player_app/src/app/view_models/playpist_information.dart';
+import 'package:player_app/src/app/widgets/play_or_shuffle_switch.dart';
+import 'package:player_app/src/app/widgets/playlist_songs.dart';
+import 'package:player_app/src/app/widgets/playpist_information.dart';
 
 class PlayListScreen extends StatelessWidget {
   const PlayListScreen({Key? key}) : super(key: key);

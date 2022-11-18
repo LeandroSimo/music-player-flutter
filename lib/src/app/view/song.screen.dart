@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
-import 'package:player_app/src/app/view_models/musicplayer.dart';
+import 'package:player_app/src/app/widgets/musicplayer.dart';
 import 'package:rxdart/rxdart.dart' as rxdart;
 
 // Song Model
 import 'package:player_app/src/app/model/song.dart';
 
 // Widget
-import 'package:player_app/src/app/view_models/background_filter.dart';
-import 'package:player_app/src/app/view_models/seekBar.dart';
+import 'package:player_app/src/app/widgets/background_filter.dart';
+import 'package:player_app/src/app/widgets/seekBar.dart';
 
 class SongScreen extends StatefulWidget {
   const SongScreen({Key? key}) : super(key: key);

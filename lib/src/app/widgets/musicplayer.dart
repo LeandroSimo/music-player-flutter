@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 // Widget
-import 'package:player_app/src/app/view_models/player_buttons.dart';
+import 'package:player_app/src/app/widgets/player_buttons.dart';
 
 // Model
-import 'package:player_app/src/app/view_models/seekBar.dart';
+import 'package:player_app/src/app/widgets/seekBar.dart';
 import 'package:player_app/src/app/model/song.dart';
 
 class MusicPlayer extends StatelessWidget {

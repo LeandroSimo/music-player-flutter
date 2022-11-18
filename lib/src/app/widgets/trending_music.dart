@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 // Widgets
 import 'package:player_app/src/app/model/song.dart';
-import 'package:player_app/src/app/view_models/section_header.dart';
-import 'package:player_app/src/app/view_models/song_card.dart';
+import 'package:player_app/src/app/widgets/section_header.dart';
+import 'package:player_app/src/app/widgets/song_card.dart';
 
 class TrendingMusic extends StatelessWidget {
   const TrendingMusic({

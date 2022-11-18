@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:player_app/src/app/model/playlist.dart';
 
 // Widget
-import 'package:player_app/src/app/view_models/playlist_card.dart';
-import 'package:player_app/src/app/view_models/section_header.dart';
+import 'package:player_app/src/app/widgets/playlist_card.dart';
+import 'package:player_app/src/app/widgets/section_header.dart';
 
 class PlayListMusic extends StatelessWidget {
   const PlayListMusic({
