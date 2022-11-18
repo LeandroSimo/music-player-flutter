@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:just_audio_background/just_audio_background.dart';
 import 'package:player_app/src/app/view_models/musicplayer.dart';
 import 'package:rxdart/rxdart.dart' as rxdart;
 
@@ -30,15 +31,39 @@ class _SongScreenState extends State<SongScreen> {
         children: [
           AudioSource.uri(
             Uri.parse('asset:///${song.url}'),
+            // tag: MediaItem(
+            //   id: song.url,
+            //   album: song.description,
+            //   title: song.title,
+            //   artUri: Uri.parse('asset:///${song.url}'),
+            // ),
           ),
           AudioSource.uri(
             Uri.parse('asset:///${Song.songs[1].url}'),
+            // tag: MediaItem(
+            //   id: Song.songs[1].url,
+            //   album: song.description,
+            //   title: song.title,
+            //   artUri: Uri.parse('asset:///${Song.songs[1].url}'),
+            // ),
           ),
           AudioSource.uri(
             Uri.parse('asset:///${Song.songs[2].url}'),
+            // tag: MediaItem(
+            //   id: Song.songs[2].url,
+            //   album: song.description,
+            //   title: song.title,
+            //   artUri: Uri.parse('asset:///${Song.songs[2].url}'),
+            // ),
           ),
           AudioSource.uri(
             Uri.parse('asset:///${Song.songs[3].url}'),
+            // tag: MediaItem(
+            //   id: Song.songs[3].url,
+            //   album: song.description,
+            //   title: song.title,
+            //   artUri: Uri.parse('asset:///${Song.songs[3].url}'),
+            // ),
           ),
         ],
       ),
@@ -62,6 +87,8 @@ class _SongScreenState extends State<SongScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final song = ModalRoute.of(context)!.settings.arguments as Song;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,

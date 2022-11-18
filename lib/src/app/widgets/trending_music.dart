@@ -24,11 +24,12 @@ class TrendingMusic extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.27,
             child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: songs.length,
-                itemBuilder: (context, index) {
-                  return SongCard(song: songs[index]);
-                }),
+              scrollDirection: Axis.horizontal,
+              itemCount: songs.length,
+              itemBuilder: (context, index) {
+                return SongCard(song: songs[index]);
+              },
+            ),
           )
         ],
       ),
